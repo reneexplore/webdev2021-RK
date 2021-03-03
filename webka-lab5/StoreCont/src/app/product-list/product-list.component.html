@@ -1,0 +1,9 @@
+<h2 class = "main-header">Please chose the category you like:</h2>
+<div *ngFor = "let category of categories">
+  <p>
+      <a [title] = "category.name" [routerLink]="['/categories', category.id]">
+        {{category.name}}
+      </a>
+  </p>
+</div>
+

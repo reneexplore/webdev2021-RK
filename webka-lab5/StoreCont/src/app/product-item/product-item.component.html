@@ -1,0 +1,29 @@
+<p>There you can see items of this category</p>
+
+<div *ngFor="let product of products" class="setka2">
+
+<div *ngIf = "product.id === category_id">
+  <h3>
+    <a  [title]="product.name + ' details'" [routerLink]="['/products', product.id]">
+      {{ product.name }}
+    </a>
+  </h3>
+  <img *ngIf ="product.image" [src] ="product.image" >
+
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+  <p *ngIf="product.rating">
+    Rating: {{ product.rating }}
+  </p>
+  <p *ngIf="product.description">
+    Likes: {{ product.likes }}
+  </p>
+  <button (click)= "likeItem(product.id_uniq)">Like</button>
+
+  <button (click)="removeItem(product.id_uniq)">Remove</button>
+</div>
+
+
+
+</div>
